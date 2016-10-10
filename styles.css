@@ -3,11 +3,29 @@ header {
   text-align: center;
   width: 100%;
 }
+main {
+  text-align: center;
+}
 h1 {
   padding: 5px;
   color: #ED458B;
 }
 #user-input {
-  height: 60px;
+  height: 30px;
   width: 100px;
+  display: block;
+  margin: 20px auto;
+  outline: none;
+}
+
+#results {
+  margin-top: 40px;
+}
+
+h3 {
+  margin: 20px 0;
+}
+
+#reset {
+  margin: 20px 0;
 }
