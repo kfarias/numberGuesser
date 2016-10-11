@@ -25,7 +25,10 @@ guess.addEventListener('click', function() {
   playerNumber.innerText = input;
   (userInput).value = '';
   if (isNaN(userInput.value)) {
-  return alert('Please guess a number');
+    return alert('Please guess a number');
+  }
+  if ( input > 100 || input < 1) {
+    return resultsMsg.innerText = 'Please guess between 1 - 100.';
   }
   if (input > mysteryNumber) {
     return resultsMsg.innerText = 'That is too high.';
@@ -33,7 +36,7 @@ guess.addEventListener('click', function() {
   if (input < mysteryNumber) {
     return resultsMsg.innerText = 'That is too low.';
   }
-  if (input === mysteryNumber) {
+  else if (input === mysteryNumber) {
     return resultsMsg.innerHTML = 'That is correct! Click Reset to play again.';
   }
 });
