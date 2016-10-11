@@ -13,10 +13,13 @@ clear.addEventListener('click', function() {
 });
 
 reset.addEventListener('click', function() {
+  // debugger;
   var mysteryNumber = Math.floor((Math.random() * 100) + 1);
   console.log(mysteryNumber);
   (userInput).value = '';
   playerNumber.innerText = '#';
+  resultsMsg.innerText = "Please make a guess above.";
+  reset.setAttribute('disabled', true);
 });
 
 
@@ -24,6 +27,7 @@ guess.addEventListener('click', function() {
   var input = parseInt(userInput.value);
   playerNumber.innerText = input;
   (userInput).value = '';
+  reset.removeAttribute('disabled');
   if (isNaN(userInput.value)) {
     return alert('Please guess a number');
   }
