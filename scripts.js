@@ -3,6 +3,8 @@ var userInput = document.getElementById('user-input');
 var guess = document.getElementById('guess');
 var clear = document.getElementById('clear');
 var reset = document.getElementById('reset');
+var resultsMsg = document.getElementById('results-msg');
+var playerNumber = document.querySelector('h3');
 
 console.log(mysteryNumber);
 
@@ -14,23 +16,25 @@ reset.addEventListener('click', function() {
   var mysteryNumber = Math.floor((Math.random() * 100) + 1);
   console.log(mysteryNumber);
   (userInput).value = '';
+  playerNumber.innerText = '#';
 });
 
 
 guess.addEventListener('click', function() {
   var input = parseInt(userInput.value);
-  document.querySelector('h3').innerText = input;
+  playerNumber.innerText = input;
+  (userInput).value = '';
   if (isNaN(userInput.value)) {
   return alert('Please guess a number');
   }
   if (input > mysteryNumber) {
-  return alert('You have guessed too high');
+    return resultsMsg.innerText = 'That is too high.';
   }
   if (input < mysteryNumber) {
-    return alert('You have guessed too low');
+    return resultsMsg.innerText = 'That is too low.';
   }
   if (input === mysteryNumber) {
-  return alert('Correct!!');
+    return resultsMsg.innerHTML = 'That is correct! Click Reset to play again.';
   }
 });
 
