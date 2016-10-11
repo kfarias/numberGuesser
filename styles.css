@@ -24,8 +24,24 @@ h1 {
 
 h3 {
   margin: 20px 0;
+  font-size: 100px;
+  color: #ED458B;
 }
 
 #reset {
   margin: 20px 0;
+}
+button {
+    background-color: #A9A9A9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:25% 25% 25% 25%;
+}
+h2 {
+  font-family: "courier new";
 }
