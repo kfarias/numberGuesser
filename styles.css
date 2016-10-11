@@ -8,6 +8,7 @@ header {
   width: 100%;
   height: 90px;
 }
+
 main {
   text-align: center;
 }
@@ -35,6 +36,7 @@ h3 {
   font-size: 100px;
   color: #ED458B;
 }
+
 span {
   font-family: 'Open Sans', sans-serif;
   color: #E6E7E8;
@@ -43,6 +45,7 @@ span {
 #reset {
   margin: 20px 0;
 }
+
 button {
     background-color: #A9A9A9;
     border: none;
@@ -53,7 +56,5 @@ button {
     display: inline-block;
     font-size: 16px;
     border-radius:25% 25% 25% 25%;
-}
-h2 {
-  font-family: "courier new";
+    outline: none;
 }
