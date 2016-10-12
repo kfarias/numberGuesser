@@ -9,34 +9,66 @@ var playerNumber = document.querySelector('h3');
 console.log(mysteryNumber);
 
 clear.addEventListener('click', function() {
-  (userInput).value = '';
+  emptyInput();
 });
 
 reset.addEventListener('click', function() {
-  var mysteryNumber = generateNumber();
-  console.log(mysteryNumber);
-  (userInput).value = '';
-  playerNumber.innerText = '#';
-  resultsMsg.innerText = "Please make a guess above.";
-  reset.setAttribute('disabled', true);
+  resetGame();
 });
+
 userInput.addEventListener('keyup', function(){
-  var input = userInput.value;
-  if (input !== ''){
-    clear.removeAttribute('disabled');
-  }
-  else  {
-  clear.setAttribute('disabled', true);
-  }
+  inputIsFilled();
 });
 
 guess.addEventListener('click', function() {
-  // debugger;
+  checkGuess();
+});
+
+userInput.addEventListener('keydown', function(e) {
+  if (e.keyCode === 13) {
+    checkGuess();
+  }
+});
+
+function generateNumber() {
+  return Math.floor((Math.random() * 100) + 1);
+}
+
+function emptyInput() {
+  (userInput).value = '';
+}
+
+function disableButtons() {
+  clear.setAttribute('disabled', true);
+  guess.setAttribute('disabled', true);
+}
+
+function resetGame() {
+  mysteryNumber = generateNumber();
+  emptyInput();
+  playerNumber.innerText = '#';
+  resultsMsg.innerText = "Please make a guess above.";
+  reset.setAttribute('disabled', true);
+  return console.log(mysteryNumber);
+}
+
+function inputIsFilled() {
+  var input = userInput.value;
+  if (input !== ''){
+    clear.removeAttribute('disabled');
+    guess.removeAttribute('disabled');
+  } else {
+    disableButtons();
+  }
+}
+
+function checkGuess() {
   var input = parseInt(userInput.value);
   playerNumber.innerText = input;
-  (userInput).value = '';
+  emptyInput();
   reset.removeAttribute('disabled');
-  clear.setAttribute('disabled', true);
+  disableButtons();
+  userInput.focus();
   if (isNaN(input)) {
     playerNumber.innerText = '?';
     return resultsMsg.innerText = 'Please guess a number';
@@ -51,10 +83,7 @@ guess.addEventListener('click', function() {
     return resultsMsg.innerText = 'That is too low.';
   }
   else if (input === mysteryNumber) {
+    userInput.blur();
     return resultsMsg.innerHTML = 'That is correct! Click Reset to play again.';
   }
-});
-
-function generateNumber() {
-  return Math.floor((Math.random() * 100) + 1);
 }
