@@ -17,6 +17,7 @@ h1 {
 
 span {
   color: #ED458B;
+
 }
 
 main {
@@ -75,13 +76,22 @@ h3 {
 }
 /*testing;*/
 @media screen and (max-width: 500px) {
+  .top-content {
+    /*height: 100;*/
+    font-size: 40px;
+    display: inline-block;
+
+  }
  #guess, #clear {
    display: block;
    margin: 0 auto;
+   width: 90%;
  }
- .top-content {
-   height: 100;
-   font-size: 40px;
-   display: inline-block;
+ #guess {
+   margin-bottom: 20px;
+ }
+ #reset {
+   width: 90%;
+   height: 35px;
  }
 }
