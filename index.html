@@ -12,16 +12,16 @@
     <header>
       <h1><span>Number </span>Guesser</h1>
     </header>
-    <main class="main-content">
+    <main id="main-content">
       <section>
         <input id="user-input" type="number" name="name" placeholder="Enter your guess" min="1" max="100" autofocus>
         <button id="guess" type="button" disabled>Guess</button>
         <button id="clear" type="button"  name="button" disabled>Clear</button>
       </section>
       <section id="results">
-        <h2>Your last guess was</h2>
+        <h2 id="results-header">You have not guessed.</h2>
         <h3>#</h3>
-        <h2 id="results-msg">Please make a guess above.</h2>
+        <h2 id="results-msg">Please make a guess above!</h2>
       </section>
       <button id="reset" type="button" name="button" disabled>Reset</button>
     </main>
