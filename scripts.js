@@ -1,4 +1,4 @@
-var mysteryNumber = mysteryNumber();
+var mysteryNumber = generateNumber();
 var userInput = document.getElementById('user-input');
 var guess = document.getElementById('guess');
 var clear = document.getElementById('clear');
@@ -13,7 +13,7 @@ clear.addEventListener('click', function() {
 });
 
 reset.addEventListener('click', function() {
-  var mysteryNumber = Math.floor((Math.random() * 100) + 1);
+  var mysteryNumber = generateNumber();
   console.log(mysteryNumber);
   (userInput).value = '';
   playerNumber.innerText = '#';
@@ -55,6 +55,6 @@ guess.addEventListener('click', function() {
   }
 });
 
-function mysteryNumber() {
+function generateNumber() {
   return Math.floor((Math.random() * 100) + 1);
 }
