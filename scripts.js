@@ -25,13 +25,19 @@ guess.addEventListener('click', function() {
 });
 
 userInput.addEventListener('keydown', function(e) {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 && userInput.value !== '') {
     checkGuess();
   }
 });
 
 function generateNumber() {
   return Math.floor((Math.random() * 100) + 1);
+}
+
+function disableEnter() {
+  if (userInput === '') {
+
+  }
 }
 
 function emptyInput() {
@@ -46,6 +52,7 @@ function disableButtons() {
 function resetGame() {
   mysteryNumber = generateNumber();
   emptyInput();
+  userInput.focus();
   playerNumber.innerText = '#';
   resultsMsg.innerText = "Please make a guess above.";
   reset.setAttribute('disabled', true);
