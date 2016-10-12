@@ -13,7 +13,6 @@ clear.addEventListener('click', function() {
 });
 
 reset.addEventListener('click', function() {
-  // debugger;
   var mysteryNumber = Math.floor((Math.random() * 100) + 1);
   console.log(mysteryNumber);
   (userInput).value = '';
@@ -21,15 +20,26 @@ reset.addEventListener('click', function() {
   resultsMsg.innerText = "Please make a guess above.";
   reset.setAttribute('disabled', true);
 });
-
+userInput.addEventListener('keyup', function(){
+  var input = userInput.value;
+  if (input !== ''){
+    clear.removeAttribute('disabled');
+  }
+  else  {
+  clear.setAttribute('disabled', true);
+  }
+});
 
 guess.addEventListener('click', function() {
+  // debugger;
   var input = parseInt(userInput.value);
   playerNumber.innerText = input;
   (userInput).value = '';
   reset.removeAttribute('disabled');
-  if (isNaN(userInput.value)) {
-    return alert('Please guess a number');
+  clear.setAttribute('disabled', true);
+  if (isNaN(input)) {
+    playerNumber.innerText = '?';
+    return resultsMsg.innerText = 'Please guess a number';
   }
   if ( input > 100 || input < 1) {
     return resultsMsg.innerText = 'Please guess between 1 - 100.';
