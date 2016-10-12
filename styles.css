@@ -1,5 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 header {
@@ -17,7 +18,7 @@ h1 {
 
 span {
   color: #ED458B;
-
+  font-weight: 700;
 }
 
 main {
