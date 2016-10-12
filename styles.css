@@ -46,7 +46,7 @@ span {
   margin: 20px 0;
 }
 
-button {
+/*button {
     background-color: #A9A9A9;
     border: none;
     color: white;
@@ -55,6 +55,21 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius:25% 25% 25% 25%;
+    border-radius:25px 25px 25px 25px;
     outline: none;
+}*/
+@media screen and (max-width: 500px) {
+ #guess, #clear {
+   display: block;
+   margin: 0 auto;
+ }
+ .top-content {
+   height: 100;
+   font-size: 40px;
+   display: inline-block;
+ }
+ #guess {
+
+ }
+
 }
