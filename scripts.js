@@ -52,6 +52,7 @@ function disableButtons() {
 function resetGame() {
   mysteryNumber = generateNumber();
   emptyInput();
+  userInput.focus();
   playerNumber.innerText = '#';
   resultsMsg.innerText = "Please make a guess above.";
   reset.setAttribute('disabled', true);
