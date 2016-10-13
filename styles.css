@@ -90,6 +90,7 @@ h3 {
 
   button, #reset {
     display: block;
+    font-size: 1.3rem;
     margin: 0 auto;
     height: 45px;
     width: 360px;;
