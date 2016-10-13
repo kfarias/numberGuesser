@@ -9,18 +9,6 @@ var resultsMsg = document.getElementById('results-msg');
 
 console.log(mysteryNumber);
 
-clear.addEventListener('click', function() {
-  emptyInput();
-});
-
-reset.addEventListener('click', function() {
-  resetGame();
-});
-
-userInput.addEventListener('keyup', function(){
-  inputIsFilled();
-});
-
 guess.addEventListener('click', function() {
   checkGuess();
 });
@@ -31,17 +19,35 @@ userInput.addEventListener('keydown', function(e) {
   }
 });
 
+userInput.addEventListener('keyup', function() {
+  inputIsFilled();
+  limitText(this, 3);
+});
+
+userInput.addEventListener('keydown', function() {
+  limitText(this, 3);
+});
+
+clear.addEventListener('click', function() {
+  emptyInput();
+});
+
+reset.addEventListener('click', function() {
+  resetGame();
+});
+
 function generateNumber() {
   return Math.floor((Math.random() * 100) + 1);
 }
 
 function emptyInput() {
   (userInput).value = '';
+  return userInput.focus();
 }
 
 function disableButtons() {
   clear.setAttribute('disabled', true);
-  guess.setAttribute('disabled', true);
+  return guess.setAttribute('disabled', true);
 }
 
 function resetGame() {
@@ -62,6 +68,12 @@ function inputIsFilled() {
     guess.removeAttribute('disabled');
   } else {
     disableButtons();
+  }
+}
+
+function limitText(limitField, limitNum) {
+  if (limitField.value.length > limitNum) {
+      limitField.value = limitField.value.substring(0, limitNum);
   }
 }
 
