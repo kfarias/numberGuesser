@@ -42,12 +42,8 @@ function generateNumber() {
 
 function emptyInput() {
   (userInput).value = '';
-  return userInput.focus();
-}
-
-function disableButtons() {
   clear.setAttribute('disabled', true);
-  return guess.setAttribute('disabled', true);
+  return userInput.focus();
 }
 
 function resetGame() {
@@ -64,11 +60,20 @@ function resetGame() {
 function inputIsFilled() {
   var input = userInput.value;
   if (input !== ''){
-    clear.removeAttribute('disabled');
-    guess.removeAttribute('disabled');
+    enableButtons();
   } else {
     disableButtons();
   }
+}
+
+function disableButtons() {
+  clear.setAttribute('disabled', true);
+  return guess.setAttribute('disabled', true);
+}
+
+function enableButtons() {
+  clear.removeAttribute('disabled');
+  return guess.removeAttribute('disabled');
 }
 
 function limitText(limitField, limitNum) {
