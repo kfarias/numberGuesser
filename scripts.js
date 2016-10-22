@@ -43,7 +43,6 @@ function generateNumber() {
 function emptyInput() {
   (userInput).value = '';
   clear.setAttribute('disabled', true);
-  return userInput.focus();
 }
 
 function resetGame() {
