@@ -89,7 +89,6 @@ function checkGuess() {
   emptyInput();
   reset.removeAttribute('disabled');
   disableButtons();
-  userInput.focus();
   if (isNaN(input)) {
     playerNumber.innerText = '?';
     return resultsMsg.innerText = 'Please guess a number';
