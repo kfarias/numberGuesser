@@ -4,7 +4,6 @@ var guess = document.getElementById('guess');
 var clear = document.getElementById('clear');
 var reset = document.getElementById('reset');
 
-console.log(mysteryNumber);
 
 guess.addEventListener('click', function() {
   checkGuess();
@@ -54,7 +53,6 @@ function resetGame() {
   playerNumber.innerText = '#';
   resultsMsg.innerText = "Please make a guess above!";
   reset.setAttribute('disabled', true);
-  console.log(mysteryNumber);
 }
 
 function inputIsFilled() {
