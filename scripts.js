@@ -4,7 +4,6 @@ var guess = document.getElementById('guess');
 var clear = document.getElementById('clear');
 var reset = document.getElementById('reset');
 
-
 guess.addEventListener('click', function() {
   checkGuess();
 });
@@ -59,9 +58,7 @@ function inputIsFilled() {
   var input = userInput.value;
   if (input !== ''){
     enableButtons();
-  } else {
-    disableButtons();
-  }
+  } else { disableButtons() }
 }
 
 function disableButtons() {
