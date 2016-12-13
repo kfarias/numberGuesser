@@ -3,9 +3,6 @@ var userInput = document.getElementById('user-input');
 var guess = document.getElementById('guess');
 var clear = document.getElementById('clear');
 var reset = document.getElementById('reset');
-var resultsHeader = document.getElementById('results-header');
-var playerNumber = document.querySelector('h3');
-var resultsMsg = document.getElementById('results-msg');
 
 console.log(mysteryNumber);
 
@@ -47,6 +44,9 @@ function emptyInput() {
 }
 
 function resetGame() {
+  var resultsMsg = document.getElementById('results-msg');
+  var playerNumber = document.querySelector('h3');
+  var resultsHeader = document.getElementById('results-header');
   mysteryNumber = generateNumber();
   emptyInput();
   userInput.focus();
@@ -54,7 +54,7 @@ function resetGame() {
   playerNumber.innerText = '#';
   resultsMsg.innerText = "Please make a guess above!";
   reset.setAttribute('disabled', true);
-  return console.log(mysteryNumber);
+  console.log(mysteryNumber);
 }
 
 function inputIsFilled() {
@@ -83,6 +83,9 @@ function limitText(limitField, limitNum) {
 }
 
 function checkGuess() {
+  var resultsMsg = document.getElementById('results-msg');
+  var playerNumber = document.querySelector('h3');
+  var resultsHeader = document.getElementById('results-header');
   var input = parseInt(userInput.value);
   resultsHeader.innerText = 'Your last guess was';
   playerNumber.innerText = input;
